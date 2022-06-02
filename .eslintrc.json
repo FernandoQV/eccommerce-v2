@@ -1,3 +1,78 @@
 {
-  "extends": "next/core-web-vitals"
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "standard",
+        "eslint-config-prettier"
+    ],
+    "settings": {
+        "react":{
+            "version":"detect"
+        }
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "no-console":"warn",
+        "react/self-closing-comp":["warn",{
+            "component":true
+        }],
+        "react/jsx-sort-props": [
+            "warn",
+            {
+                "callbacksLast": true,
+                "shorthandFirst": true,
+                "multiline": "last",
+                "ignoreCase": true,
+                "noSortAlphabetically": false,
+                "reservedFirst": true
+            }
+        ],
+        "padding-line-between-statements": [
+            "warn",
+            {
+              "blankLine": "always",
+              "prev": "*",
+              "next": "return"
+            },
+            {
+              "blankLine": "always",
+              "prev": [
+                "const",
+                "let",
+                "var"
+              ],
+              "next": "*"
+            },
+            {
+              "blankLine": "any",
+              "prev": [
+                "const",
+                "let",
+                "var"
+              ],
+              "next": [
+                "const",
+                "let",
+                "var"
+              ]
+            }
+          ],
+          "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false ,"argsIgnorePattern": "^_" }]
+    }
 }
