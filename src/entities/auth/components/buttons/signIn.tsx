@@ -6,7 +6,7 @@ interface signinProps {
   provider: string
 }
 
-const SigninButton: FC<signinProps> = ({ provider }) => {
+const SignInButton: FC<signinProps> = ({ provider }) => {
   const hanlderSignIn = async (provider: string) => {
     await signIn(provider)
   }
@@ -18,4 +18,4 @@ const SigninButton: FC<signinProps> = ({ provider }) => {
   )
 }
 
-export default SigninButton
+export default SignInButton

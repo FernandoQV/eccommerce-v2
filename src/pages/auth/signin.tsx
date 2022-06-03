@@ -1,4 +1,4 @@
-import SigninButton from '@/entities/auth/components/buttons/signin'
+import SignInButton from '@/entities/auth/components/buttons/signIn'
 import { Center, Heading, Stack } from '@chakra-ui/react'
 import type { GetServerSideProps, NextPage } from 'next'
 import { getSession, getProviders } from 'next-auth/react'
@@ -20,7 +20,7 @@ const SigninPage: NextPage<Props> = ({ providers }) => {
         <Heading>Inicia Session</Heading>
         <Stack>
             {providersAuth.map(prov=>(
-                <SigninButton key={prov.id} provider={prov.id}/>
+                <SignInButton key={prov.id} provider={prov.id}/>
             ))}
         </Stack>
       </Center>
