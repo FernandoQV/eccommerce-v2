@@ -8,7 +8,7 @@ interface signinProps {
 
 const SignInButton: FC<signinProps> = ({ provider }) => {
   const hanlderSignIn = async (provider: string) => {
-    await signIn(provider, { callbackUrl: '/' })
+    await signIn(provider, { callbackUrl: 'https://myqato.vercel.app/' })
   }
 
   return (
