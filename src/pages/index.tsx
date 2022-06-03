@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <Stack maxW={'container.sm'}>
       <Heading>App</Heading>
-      
+      <Heading>App2</Heading>
     </Stack>
   )
 }
