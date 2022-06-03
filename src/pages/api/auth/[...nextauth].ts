@@ -6,6 +6,7 @@ import {prisma} from '../../../db'
 
 export default NextAuth({
   adapter: PrismaAdapter(prisma),
+  
   providers: [
     GoogleProvider({
       clientId: <string>process.env.GOOGLE_CLIENT_ID,
