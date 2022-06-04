@@ -4,9 +4,12 @@ import type { GetServerSideProps, NextPage } from 'next'
 import { getSession, getProviders } from 'next-auth/react'
 interface Props {
   providers: any
+  saludo: string
 }
-const SigninPage: NextPage<Props> = ({ providers }) => {
-  const providersAuth:Array<any> = Object.values(providers)
+const SigninPage: NextPage<Props> = ({ providers, saludo }) => {
+  const providersAuth: Array<any> = Object.values(providers)
+
+  console.log(saludo)
 
   return (
     <>
@@ -19,9 +22,9 @@ const SigninPage: NextPage<Props> = ({ providers }) => {
       >
         <Heading>Inicia Session</Heading>
         <Stack>
-            {providersAuth.map(prov=>(
-                <SignInButton key={prov.id} provider={prov.id}/>
-            ))}
+          {providersAuth.map((prov) => (
+            <SignInButton key={prov.id} provider={prov.id} />
+          ))}
         </Stack>
       </Center>
     </>
@@ -41,6 +44,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       providers,
+      saludo: 'hola',
     },
   }
 }
